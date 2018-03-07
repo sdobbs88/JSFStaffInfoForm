@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"> 
+    <h:head>
+        <title>JSF Staff Info</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Staff Information
+            <h:panelGrid columns="4">
+                <h:outputLabel value ="ID:"/>
+                <h:inputText id="idInputText" required="true"
+                             requiredMessage="ID field required"
+                             size="2"
+                             value="#{staffBean.id}">
+                </h:inputText>
+            </h:panelGrid>
+
+            <h:panelGrid columns="8">
+                <h:outputLabel value ="Last Name:"/>
+                <h:inputText id="lastNameInputText" 
+                             size="15"
+                             value="#{staffBean.lastName}">
+                </h:inputText>
+                <h:outputLabel value ="First Name:"/>
+                <h:inputText id="firstNameInputText" 
+                             size="15"
+                             value="#{staffBean.firstName}">
+                </h:inputText>
+                <h:outputLabel value ="Middle:"/>
+                <h:inputText id="MIInputText" 
+                             size="2"
+                             value="#{staffBean.mi}">
+                </h:inputText>
+            </h:panelGrid>
+            <h:panelGrid columns="4">
+                <h:outputLabel value ="Address:"/>
+                <h:inputText id="addressInputText" 
+                             size="25"
+                             value="#{staffBean.address}">
+                </h:inputText>
+            </h:panelGrid>
+            <h:panelGrid columns="8">
+                <h:outputLabel value ="City:"/>
+                <h:inputText id="cityInputText" 
+                             size="15"
+                             value="#{staffBean.city}">
+                </h:inputText>
+                <h:outputLabel value ="State:"/>
+                <h:inputText id="stateInputText" 
+                             size="2"
+                             value="#{staffBean.state}">
+                </h:inputText>
+            </h:panelGrid>
+            <h:panelGrid columns="4">
+                <h:outputLabel value ="Telephone:"/>
+                <h:inputText id="telephoneInputText" 
+                             size="15"
+                             value="#{staffBean.telephone}">
+                </h:inputText>
+            </h:panelGrid>
+            <h:panelGrid columns="8">
+                <h:commandButton value ="Insert" action ="#{staffBean.insert()}"/>
+                <h:commandButton value ="View" action="#{staffBean.view()}"/>
+                <h:commandButton  value ="Update" action="#{staffBean.update()}"/>
+                <h:commandButton value ="Clear" action="#{staffBean.clear}"/>
+            </h:panelGrid>
+            <h:panelGrid columns="4">
+                <h:outputText style="color: red" 
+                              value="#{staffBean.response}" /> 
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
